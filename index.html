@@ -1,317 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JBB2025 Conference</title>
-
+  <link rel="stylesheet" href="style.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== General Styles ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
 
-/* ===== General Styles ===== */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
-}
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* ===== Navbar ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #003366;
+      padding: 1rem 2rem;
+    }
 
-/* ===== Navbar ===== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #003366;
-  padding: 1rem 2rem;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+    }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1.5rem;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-nav a:hover {
-  text-decoration: underline;
-}
+    /* ===== Hero Section ===== */
+    .hero {
+      background: url('assets/hero.png') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
 
-/* ===== Hero Section ===== */
-.hero {
-  background: url('assets/hero.png') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 6rem 2rem;
-  position: relative;
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
+    .hero p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
 
-.hero p {
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
+    /* ===== Keynote Announcement ===== */
+    .keynote-announcement {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('assets/hero.png') no-repeat center center/cover;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #fff;
+      text-align: center;
+      margin: 3rem 0;
+    }
 
-/* ===== Schedule ===== */
-.schedule {
-  background: #f9f9f9;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  margin: 2rem 0;
-}
+    .keynote-announcement h2 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
 
-.schedule h2 {
-  color: #003366;
-  margin-bottom: 1.5rem;
-}
+    .keynote-subtitle {
+      color: #eee;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
 
-.session {
-  margin-bottom: 2rem;
-}
+    .keynote-speakers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
 
-.session h3 {
-  color: #ff8800;
-  margin-bottom: 0.5rem;
-}
+    .speaker {
+      flex: 1 1 200px;
+      text-align: center;
+    }
 
-.session ul {
-  list-style: none;
-  padding-left: 0;
-}
+    .speaker img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffdd00;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
 
-.session ul li a {
-  color: #003366;
-  text-decoration: none;
-}
+    .speaker h3 {
+      margin-top: 0.8rem;
+      color: #ffdd00;
+      font-size: 1.1rem;
+    }
 
-.session ul li a:hover {
-  text-decoration: underline;
-}
+    .keynote-details h3 {
+      margin-top: 1rem;
+      color: #ff8800;
+      font-weight: bold;
+    }
 
-/* ===== Keynote Announcement ===== */
-.keynote-announcement {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.3)), 
-              url('assets/hero.png') no-repeat center center/cover;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  color: #fff;
-  text-align: center;
-  margin: 3rem 0;
-}
+    .keynote-details p {
+      margin-top: 0.6rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #f0f0f0;
+    }
 
-.keynote-announcement h2 {
-  font-size: 2rem;
-  color: #ffdd00;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-}
+    /* ===== Schedule Section ===== */
+    .schedule {
+      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
 
-.keynote-subtitle {
-  color: #eee;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
+    .schedule h2 {
+      color: #003366;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-.keynote-speakers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
+    .session-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-left: 6px solid #ff8800;
+      padding: 1.5rem 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-.speaker {
-  flex: 1 1 200px;
-  text-align: center;
-}
+    .session-card img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
 
-.speaker img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #ffdd00;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
+    .session-card h3 {
+      color: #003366;
+      margin-bottom: 0.5rem;
+    }
 
-.speaker h3 {
-  margin-top: 0.8rem;
-  color: #ffdd00;
-  font-size: 1.1rem;
-}
+    .session-card p {
+      margin-top: 0.5rem;
+      color: #333;
+    }
 
-.keynote-details h3 {
-  margin-top: 1rem;
-  color: #ff8800;
-  font-weight: bold;
-}
+    .session-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-.keynote-details p {
-  margin-top: 0.6rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #f0f0f0;
-}
+    .session-card ul li a {
+      color: #003366;
+      text-decoration: none;
+    }
 
-/* ===== Footer ===== */
-footer {
-  background: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-}
+    .session-card ul li a:hover {
+      text-decoration: underline;
+    }
 
-/* ===== Mobile Responsiveness ===== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .speaker img {
-    width: 120px;
-    height: 120px;
-  }
-}
+    /* ===== Footer ===== */
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* ===== Mobile Responsiveness ===== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .speaker img {
+        width: 120px;
+        height: 120px;
+      }
+      .session-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .session-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- Nav -->
+
+  <!-- Navbar -->
   <nav>
-    <div class="logo">JBB2025</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#schedule">Schedule</a></li>
-      <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#venue">Venue</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="logo"><a href="#">JBB2025</a></div>
+    <div class="nav-links">
+      <a href="#schedule">Schedule</a>
+      <a href="#speakers">Keynote</a>
+      <a href="#footer">Contact</a>
+    </div>
   </nav>
 
-  <!-- Hero -->
-  <header id="home">
-    <h1>Joint Birthday Boy Summit 2025</h1>
-    <p>Exploring Innovation, Connection, and Celebration</p>
-  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to JBB2025 Conference</h1>
+    <p>Join us for an evening of talks, networking, and dancing!</p>
+  </section>
 
-  <!-- Schedule -->
-  <div class="container" id="schedule">
-    <section>
-      <img src="assets/mixer.png" class="session-img" alt="Cocktail Mixer" />
-      <h2><span class="time">6:30pm – 8:00pm</span> • Opening Cocktail Mixer</h2>
-      <p>Kick off JBB2025 with a vibrant networking mixer featuring light refreshments and live music. Connect with fellow attendees and speakers before the sessions begin.</p>
-    </section>
+  <!-- Keynote Announcement -->
+  <section id="speakers" class="keynote-announcement">
+    <div class="container">
+      <h2>✨ Special Keynote Announcement ✨</h2>
+      <p class="keynote-subtitle">
+        A Joint Presentation by <strong>Alexander Craig Murph</strong> &amp; <strong>John Michael Hailey</strong>
+      </p>
 
-    <section>
-      <img src="assets/sessionA.png" class="session-img" alt="Session A" />
-      <h2><span class="time">8:00pm – 9:00pm</span> • Session A</h2>
-      <ul>
-        <li><a href="talkA1.html">Talk A1: Placeholder Title</a></li>
-        <li><a href="talkA2.html">Talk A2: Placeholder Title</a></li>
-        <li><a href="talkA3.html">Talk A3: Placeholder Title</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <img src="assets/sessionB.png" class="session-img" alt="Session B" />
-      <h2><span class="time">9:00pm – 10:00pm</span> • Session B</h2>
-      <ul>
-        <li><a href="talkB1.html">Talk B1: Placeholder Title</a></li>
-        <li><a href="talkB2.html">Talk B2: Placeholder Title</a></li>
-        <li><a href="talkB3.html">Talk B3: Placeholder Title</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <img src="assets/sessionC.png" class="session-img" alt="Session C" />
-      <h2><span class="time">10:00pm – 11:00pm</span> • Session C</h2>
-      <ul>
-        <li><a href="talkC1.html">Talk C1: Placeholder Title</a></li>
-        <li><a href="talkC2.html">Talk C2: Placeholder Title</a></li>
-        <li><a href="talkC3.html">Talk C3: Placeholder Title</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <img src="assets/awkwarddance.png" class="session-img" alt="Awkward Dance Party" />
-      <h2><span class="time">11:00pm – 11:30pm</span> • The Totally Not Awkward Dance Party</h2>
-      <p>Shake off the science and join us for a lighthearted, fun-filled dance session — guaranteed smiles and zero awkwardness (well, almost none).</p>
-    </section>
-
-    <section>
-      <img src="assets/regularparty.png" class="session-img" alt="Regular Dance Party" />
-      <h2><span class="time">11:30pm – 2:00am</span> • Regular Dance Party</h2>
-      <p>End the night with high-energy beats, dazzling lights, and great company. Let’s make this a night to remember!</p>
-    </section>
-  </div>
-
-  <!-- Other Sections -->
-<!-- Keynote Announcement (replaces Speakers section) -->
-<section id="speakers" class="keynote-announcement">
-  <div class="container">
-    <h2>✨ Special Keynote Announcement ✨</h2>
-    <p class="keynote-subtitle">
-      A Joint Presentation by <strong>Alexander Craig Murph</strong> &amp; <strong>John Michael Hailey</strong>
-    </p>
-
-    <div class="keynote-speakers">
-      <div class="speaker">
-        <img src="assets/murph.png" alt="Alexander Craig Murph" />
-        <h3>Alexander Craig Murph</h3>
+      <div class="keynote-speakers">
+        <div class="speaker">
+          <img src="assets/murph.png" alt="Alexander Craig Murph" />
+          <h3>Alexander Craig Murph</h3>
+        </div>
+        <div class="speaker">
+          <img src="assets/hailey.png" alt="John Michael Hailey" />
+          <h3>John Michael Hailey</h3>
+        </div>
       </div>
-      <div class="speaker">
-        <img src="assets/hailey.png" alt="John Michael Hailey" />
-        <h3>John Michael Hailey</h3>
+
+      <div class="keynote-details">
+        <h3>Topic: <em>“November 22nd: Reflections on a Date That Shaped a Nation”</em></h3>
+        <p>
+          Join us for a powerful and historically resonant keynote examining the
+          <strong>modern relevance and national significance of November 22nd</strong>.
+          Our speakers will explore the pivotal events that have defined this date,
+          offering a thoughtful overview of its lasting impact on history, culture, and
+          collective memory.
+        </p>
+        <p>
+          This session promises to be both reflective and forward-looking — connecting
+          past lessons to today’s challenges and insights.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="keynote-details">
-      <h3>Topic: <em>“November 22nd: Reflections on a Date That Shaped a Nation”</em></h3>
-      <p>
-        Join us for a powerful and historically resonant keynote examining the
-        <strong>modern relevance and national significance of November 22nd</strong>.
-        Our speakers will explore the pivotal events that have defined this date,
-        offering a thoughtful overview of its lasting impact on history, culture, and
-        collective memory.
-      </p>
-      <p>
-        This session promises to be both reflective and forward-looking — connecting
-        past lessons to today’s challenges and insights.
-      </p>
+  <!-- Conference Schedule -->
+  <section id="schedule" class="schedule">
+    <div class="container">
+      <h2>📅 Conference Schedule</h2>
+
+      <div class="session-card">
+        <img src="assets/mixer.png" alt="Cocktail Mixer">
+        <div>
+          <h3>6:30pm - 8:00pm: Opening Cocktail Mixer</h3>
+          <p>A relaxed welcome to network and meet fellow attendees.</p>
+        </div>
+      </div>
+
+      <div class="session-card">
+        <img src="assets/sessionA.png" alt="Session A">
+        <div>
+          <h3>8:00pm - 9:00pm: Session A</h3>
+          <ul>
+            <li><a href="#">Talk 1 (Abstract)</a></li>
+            <li><a href="#">Talk 2 (Abstract)</a></li>
+            <li><a href="#">Talk 3 (Abstract)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session-card">
+        <img src="assets/sessionB.png" alt="Session B">
+        <div>
+          <h3>9:00pm - 10:00pm: Session B</h3>
+          <ul>
+            <li><a href="#">Talk 1 (Abstract)</a></li>
+            <li><a href="#">Talk 2 (Abstract)</a></li>
+            <li><a href="#">Talk 3 (Abstract)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session-card">
+        <img src="assets/sessionC.png" alt="Session C">
+        <div>
+          <h3>10:00pm - 11:00pm: Session C</h3>
+          <ul>
+            <li><a href="#">Talk 1 (Abstract)</a></li>
+            <li><a href="#">Talk 2 (Abstract)</a></li>
+            <li><a href="#">Talk 3 (Abstract)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session-card">
+        <img src="assets/awkwarddance.png" alt="Totally Not Awkward Dance Party">
+        <div>
+          <h3>11:00pm - 11:30pm: The Totally Not Awkward Dance Party</h3>
+          <p>Get ready to dance and enjoy some lighthearted fun!</p>
+        </div>
+      </div>
+
+      <div class="session-card">
+        <img src="assets/regulardance.png" alt="Regular Dance Party">
+        <div>
+          <h3>11:30pm - 2:00am: Regular Dance Party</h3>
+          <p>End the night celebrating with music and movement.</p>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-  <div class="container" id="venue">
-    <section>
-      <h2>Venue</h2>
-      <p>The JBB2025 Conference will be held at the Grand Horizon Center, downtown — a stunning riverside venue with panoramic city views.</p>
-    </section>
-  </div>
-
-  <div class="container" id="contact">
-    <section>
-      <h2>Contact</h2>
-      <p>For inquiries, email us at <a href="mailto:info@jbb2025.org">info@jbb2025.org</a>.</p>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 JBB Conference Committee • All Rights Reserved
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; 2025 JBB Conference. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
