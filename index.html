@@ -6,12 +6,7 @@
   <title>JBB2025 Conference</title>
 
   <style>
-    /* ===== Reset ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +15,7 @@
       line-height: 1.6;
     }
 
-    /* ===== Navigation Bar ===== */
+    /* ===== Navigation ===== */
     nav {
       position: sticky;
       top: 0;
@@ -53,28 +48,19 @@
       transition: color 0.3s ease;
     }
 
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
+    nav ul li a:hover { color: #ffcc00; }
 
-    /* ===== Hero Section ===== */
+    /* ===== Hero ===== */
     header {
       background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1561484930-1b3b7fdf98de?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+                  url('assets/hero.png') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 7rem 1rem 5rem;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #eee;
-    }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; color: #eee; }
 
     /* ===== Main Container ===== */
     .container {
@@ -83,7 +69,6 @@
       margin: 2rem auto;
     }
 
-    /* ===== Section Cards ===== */
     section {
       background: #fff;
       margin-bottom: 2rem;
@@ -104,32 +89,26 @@
       font-size: 1.4rem;
     }
 
-    .time {
-      color: #ff8800;
-      font-weight: bold;
-    }
+    .time { color: #ff8800; font-weight: bold; }
 
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
+    ul { list-style: none; padding-left: 1rem; }
+    li { margin: 0.5rem 0; }
 
     a {
       color: #0056b3;
       text-decoration: none;
       font-weight: 600;
     }
+    a:hover { text-decoration: underline; color: #ff8800; }
 
-    a:hover {
-      text-decoration: underline;
-      color: #ff8800;
+    .session-img {
+      width: 100%;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 1rem;
     }
 
-    /* ===== Footer ===== */
     footer {
       text-align: center;
       padding: 2rem;
@@ -139,66 +118,19 @@
       margin-top: 3rem;
     }
 
-    /* ===== Session Images ===== */
-    .session-img {
-      width: 100%;
-      border-radius: 10px;
-      height: 160px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    /* ===== Responsive Design ===== */
+    /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .container {
-        width: 95%;
-      }
-
-      section {
-        padding: 1.5rem;
-      }
-    }
-
-    /* ===== Fade Animation ===== */
-    section {
-      opacity: 0;
-      transform: translateY(15px);
-      animation: fadeIn 0.6s ease forwards;
-    }
-
-    section:nth-child(odd) {
-      animation-delay: 0.2s;
-    }
-
-    section:nth-child(even) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      nav { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-wrap: wrap; gap: 0.5rem; }
+      header h1 { font-size: 2rem; }
+      .container { width: 95%; }
+      section { padding: 1.5rem; }
     }
   </style>
 </head>
 
 <body>
-  <!-- ===== Navigation ===== -->
+  <!-- Nav -->
   <nav>
     <div class="logo">JBB2025</div>
     <ul>
@@ -210,22 +142,22 @@
     </ul>
   </nav>
 
-  <!-- ===== Hero Section ===== -->
+  <!-- Hero -->
   <header id="home">
     <h1>JBB2025 Conference</h1>
     <p>Exploring Innovation, Connection, and Celebration</p>
   </header>
 
-  <!-- ===== Schedule ===== -->
+  <!-- Schedule -->
   <div class="container" id="schedule">
     <section>
-      <img src="https://images.unsplash.com/photo-1522199794611-8e3563a3b8df?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Cocktail Mixer">
+      <img src="assets/mixer.png" class="session-img" alt="Cocktail Mixer" />
       <h2><span class="time">6:30pm – 8:00pm</span> • Opening Cocktail Mixer</h2>
       <p>Kick off JBB2025 with a vibrant networking mixer featuring light refreshments and live music. Connect with fellow attendees and speakers before the sessions begin.</p>
     </section>
 
     <section>
-      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Session A">
+      <img src="assets/sessionA.png" class="session-img" alt="Session A" />
       <h2><span class="time">8:00pm – 9:00pm</span> • Session A</h2>
       <ul>
         <li><a href="talkA1.html">Talk A1: Placeholder Title</a></li>
@@ -235,7 +167,7 @@
     </section>
 
     <section>
-      <img src="https://images.unsplash.com/photo-1503424886306-0f42d8e8a5a9?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Session B">
+      <img src="assets/sessionB.png" class="session-img" alt="Session B" />
       <h2><span class="time">9:00pm – 10:00pm</span> • Session B</h2>
       <ul>
         <li><a href="talkB1.html">Talk B1: Placeholder Title</a></li>
@@ -245,7 +177,7 @@
     </section>
 
     <section>
-      <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Session C">
+      <img src="assets/sessionC.png" class="session-img" alt="Session C" />
       <h2><span class="time">10:00pm – 11:00pm</span> • Session C</h2>
       <ul>
         <li><a href="talkC1.html">Talk C1: Placeholder Title</a></li>
@@ -255,19 +187,19 @@
     </section>
 
     <section>
-      <img src="https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Awkward Dance Party">
+      <img src="assets/awkwarddance.png" class="session-img" alt="Awkward Dance Party" />
       <h2><span class="time">11:00pm – 11:30pm</span> • The Totally Not Awkward Dance Party</h2>
       <p>Shake off the science and join us for a lighthearted, fun-filled dance session — guaranteed smiles and zero awkwardness (well, almost none).</p>
     </section>
 
     <section>
-      <img src="https://images.unsplash.com/photo-1544126592-7c40e5a2c9f2?auto=format&fit=crop&w=1000&q=80" class="session-img" alt="Regular Dance Party">
+      <img src="assets/regularparty.png" class="session-img" alt="Regular Dance Party" />
       <h2><span class="time">11:30pm – 2:00am</span> • Regular Dance Party</h2>
       <p>End the night with high-energy beats, dazzling lights, and great company. Let’s make this a night to remember!</p>
     </section>
   </div>
 
-  <!-- ===== Placeholder Sections ===== -->
+  <!-- Other Sections -->
   <div class="container" id="speakers">
     <section>
       <h2>Featured Speakers</h2>
